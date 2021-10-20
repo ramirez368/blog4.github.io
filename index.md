@@ -3,11 +3,11 @@ layout: default
 ---
 
 
-[Ldap and Active Directory how they interact](https://www.youtube.com/watch?v=QyhNaY5O468&t=1s).
+[Undertanding Kerberos Protocol](https://https://www.youtube.com/watch?v=_44CHD3Vx-0).
 
 [//]: #  There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
-# What is LDAP?
+# What Kerberos?
 LDAP (Lightweight Directory Access Protocol) is an open and cross platform protocol used for directory services authentication.
 
 LDAP provides the communication language that applications use to communicate with other directory services servers. Directory services store the users, passwords, and computer accounts, and share that information with other entities on the network.
