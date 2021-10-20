@@ -8,14 +8,18 @@ layout: default
 [//]: #  There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
 # What Kerberos?
-LDAP (Lightweight Directory Access Protocol) is an open and cross platform protocol used for directory services authentication.
+What is Kerberos?
+Kerberos authentication is currently the default authorization technology used by Microsoft Windows, and implementations of Kerberos exist in Apple OS, FreeBSD, UNIX, and Linux.
 
-LDAP provides the communication language that applications use to communicate with other directory services servers. Directory services store the users, passwords, and computer accounts, and share that information with other entities on the network.
+Microsoft introduced their version of Kerberos in Windows2000. It has also become a standard for websites and Single-Sign-On implementations across platforms. The Kerberos Consortium maintains Kerberos as an open-source project.
+
+Kerberos is a vast improvement on previous authorization technologies. The strong cryptography and third-party ticket authorization make it much more difficult for cybercriminals to infiltrate your network. It is not totally without flaws, and in order to defend against those flaws, you need to first understand them.
+
+Kerberos has made the internet and its denizens more secure, and enables users to do more work on the Internet and in the office without compromising safety.
 
 
-
-## LDAP Authentication:
-![Ldap Authentication](https://api.softwarekeep.com/media/nimbus/helpcenter/LDAP_Authentification.png)
+## How do you authenticate with Kerberos?:
+![Kerberos](https://www.varonis.com/blog/wp-content/uploads/2018/07/Kerberos-Graphics-1-v2-787x790.jpg)
 
 * _Anonymous authentication_: Grants client anonymous status to LDAP.
 * _Unauthenticated authentication_: For logging purposes only, should not grant access to a client.
