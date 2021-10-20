@@ -21,40 +21,32 @@ Kerberos has made the internet and its denizens more secure, and enables users t
 ## How do you authenticate with Kerberos?:
 ![Kerberos](https://www.varonis.com/blog/wp-content/uploads/2018/07/Kerberos-Graphics-1-v2-787x790.jpg)
 
-* _Anonymous authentication_: Grants client anonymous status to LDAP.
-* _Unauthenticated authentication_: For logging purposes only, should not grant access to a client.
-* _Name/Password authentication_: Grants access to the server based on the credentials supplied – simple user/pass authentication is not secure and is not suitable for authentication without confidentiality protection.
+Practical applications
+The benefits gained by using Kerberos for domain-based authentication are:
 
-SASL authentication binds the LDAP server to another authentication mechanism, like Kerberos. The LDAP server uses the LDAP protocol to send an LDAP message to the other authorization service. That initiates a series of challenge response messages that result in either a successful authentication or a failure to authenticate.
+Delegated authentication.
 
-It’s important to note that LDAP passes all of those messages in clear text by default, so anyone with a network sniffer can read the packets. You need to add TLS encryption or similar to keep your usernames and passwords safe.
+Services that run on Windows operating systems can impersonate a client computer when accessing resources on the client's behalf. In many cases, a service can complete its work for the client by accessing resources on the local computer. When a client computer authenticates to the service, NTLM and Kerberos protocol provide the authorization information that a service needs to impersonate the client computer locally. However, some distributed applications are designed so that a front-end service must use the client computer's identity when it connects to back-end services on other computers. Kerberos authentication supports a delegation mechanism that enables a service to act on behalf of its client when connecting to other services.
 
-### What is Active Directory?
-Active Directory is a directory services implementation that provides all sorts of functionality like authentication, group and user management, policy administration and more.
+Single sign on.
 
-Active Directory (AD) supports both Kerberos and LDAP – Microsoft AD is by far the most common directory services system in use today. AD provides Single-SignOn (SSO) and works well in the office and over VPN. AD and Kerberos are not cross platform, which is one of the reasons companies are implementing access management software to manage logins from many different devices and platforms in a single place. AD does support LDAP, which means it can still be part of your overall access management scheme.
+Using Kerberos authentication within a domain or in a forest allows the user or service access to resources permitted by administrators without multiple requests for credentials. After initial domain sign on through Winlogon, Kerberos manages the credentials throughout the forest whenever access to resources is attempted.
 
-Active Directory is just one example of a directory service that supports LDAP. There are other flavors, too: Red Hat Directory Service, OpenLDAP, Apache Directory Server, and more.
+Interoperability.
 
+The implementation of the Kerberos V5 protocol by Microsoft is based on standards-track specifications that are recommended to the Internet Engineering Task Force (IETF). As a result, in Windows operating systems, the Kerberos protocol lays a foundation for interoperability with other networks in which the Kerberos protocol is used for authentication. In addition, Microsoft publishes Windows Protocols documentation for implementing the Kerberos protocol. The documentation contains the technical requirements, limitations, dependencies, and Windows-specific protocol behavior for Microsoft's implementation of the Kerberos protocol.
 
+More efficient authentication to servers.
 
-### LDAP vs. Active Directory
-LDAP is a way of speaking to Active Directory.
+Before Kerberos, NTLM authentication could be used, which requires an application server to connect to a domain controller to authenticate every client computer or service. With the Kerberos protocol, renewable session tickets replace pass-through authentication. The server is not required to go to a domain controller (unless it needs to validate a Privilege Attribute Certificate (PAC)). Instead, the server can authenticate the client computer by examining credentials presented by the client. Client computers can obtain credentials for a particular server once and then reuse those credentials throughout a network logon session.
 
-LDAP is a protocol that many different directory services and access management solutions can understand.
+Mutual authentication.
 
-The relationship between AD and LDAP is much like the relationship between Apache and HTTP:
-
-* HTTP is a web protocol.
-* Apache is a web server that uses the HTTP protocol.
-* LDAP is a directory services protocol.
-* Active Directory is a directory server that uses the LDAP protocol.
-Occasionally you’ll hear someone say, “We don’t have Active Directory, but we have LDAP.” What they probably mean is that they have another product, such as OpenLDAP, which is an LDAP server.
-It’s kind of like someone saying “We have HTTP” when they really meant “We have an Apache web server.”
+By using the Kerberos protocol, a party at either end of a network connection can verify that the party on the other end is the entity it claims to be. NTLM does not enable clients to verify a server's identity or enable one server to verify the identity of another. NTLM authentication was designed for a network environment in which servers were assumed to be genuine. The Kerberos protocol makes no such assumption.
 
 
 
-![Table with Differences between LDAP and Active Directory ](https://ipwithease.com/wp-content/uploads/2020/06/LDAP-VS-AD-TABLE.jpg)
+![Differences between LDAP and Kerberos ](https://lh3.googleusercontent.com/Xka7iPt1EcRPEPwpeYW6UcihVmYqLWkgInc8vBTbOz2jZh93ODPXqmbh6y3PMRBxChyorRzXbsVJmV27x9HrEGt76NQp0wLmpiVB7_b0w9D_HuZaGVhQ0bdErlCN5JoJXIkP4yO6=s0)
 
 ### What is an LDAP Query?
 An LDAP query is a command that asks a directory service for some information. For instance, if you’d like to see which groups a particular user is a part of, you’d submit a query that looks like this:
