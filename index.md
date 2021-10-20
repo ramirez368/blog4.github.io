@@ -48,18 +48,6 @@ By using the Kerberos protocol, a party at either end of a network connection ca
 
 ![Differences between LDAP and Kerberos ](https://lh3.googleusercontent.com/Xka7iPt1EcRPEPwpeYW6UcihVmYqLWkgInc8vBTbOz2jZh93ODPXqmbh6y3PMRBxChyorRzXbsVJmV27x9HrEGt76NQp0wLmpiVB7_b0w9D_HuZaGVhQ0bdErlCN5JoJXIkP4yO6=s0)
 
-### What is an LDAP Query?
-An LDAP query is a command that asks a directory service for some information. For instance, if you’d like to see which groups a particular user is a part of, you’d submit a query that looks like this:
-
-(&(objectClass=user)(sAMAccountName=yourUserName)
-(memberof=CN=YourGroup,OU=Users,DC=YourDomain,DC=com))
-
-Beautiful syntax, huh? Not quite as simple as typing a web address into your browser. Feels like LISP.
-
-Luckily, in most cases, you won’t need to write LDAP queries. To maintain your sanity, you’ll perform all your directory services tasks through a point-and-click management interface like Varonis DatAdvantage or perhaps using a command line shell like PowerShell that abstracts away the details of the raw LDAP protocol.
-
-TL;DR: LDAP is a protocol, and Active Directory is a server. LDAP authenticates Active Directory – it’s a set of guidelines to send and receive information (like usernames and passwords) to Active Directory. Want to learn more? Get a 1:1 AD demo and learn how Varonis helps protect your Active Directory environment.
-
 
 ### I hope this was useful to how to setup Apache Server and being expose to more Linux
 
