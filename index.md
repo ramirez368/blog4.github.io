@@ -49,7 +49,7 @@ By using the Kerberos protocol, a party at either end of a network connection ca
 ![Differences between LDAP and Kerberos ](https://lh3.googleusercontent.com/Xka7iPt1EcRPEPwpeYW6UcihVmYqLWkgInc8vBTbOz2jZh93ODPXqmbh6y3PMRBxChyorRzXbsVJmV27x9HrEGt76NQp0wLmpiVB7_b0w9D_HuZaGVhQ0bdErlCN5JoJXIkP4yO6=s0)
 
 
-### I hope this was useful to how to setup Apache Server and being expose to more Linux
+### I hope this was useful to how Kerberos works.
 
 
 ```
